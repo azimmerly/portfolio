@@ -1,0 +1,21 @@
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# gatsby
+build
+public
+.cache
+
+# environment variables
+.env*
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# mac
+.DS_Store
