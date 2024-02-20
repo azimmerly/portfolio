@@ -22,7 +22,7 @@ export const ProjectCard = ({
   githubLink,
 }: ProjectCardProps) => (
   <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-10">
-    <Link href={projectLink}>
+    <Link href={projectLink} target="_blank" rel="noopener noreferrer">
       <Image
         priority
         src={image}
