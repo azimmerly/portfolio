@@ -3,18 +3,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { FaRegPaperPlane } from "react-icons/fa6";
-import { z } from "zod";
 
 import { submitForm } from "@/app/actions/contact";
 import { ValidationError } from "@/app/components";
-
-const formSchema = z.object({
-  name: z.string().trim().min(1, { message: "Please include your name" }),
-  email: z.string().trim().email("Please include a valid email"),
-  message: z.string().trim().min(1, { message: "Please include a message" }),
-});
-
-export type FormData = z.infer<typeof formSchema>;
+import { formSchema, type FormData } from "@/app/schema";
 
 export const ContactForm = () => {
   const { register, handleSubmit, formState } = useForm<FormData>({

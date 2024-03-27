@@ -2,18 +2,16 @@
 
 import { redirect } from "next/navigation";
 
-import type { FormData } from "@/app/components";
+import { formSchema, type FormData } from "@/app/schema";
 
 export const submitForm = async (data: FormData) => {
-  if (!data.name || !data.email || !data.message) {
-    return;
-  }
-
   try {
+    const validatedData = formSchema.parse(data);
+
     await fetch(process.env.CONTACT_FORM_API, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify(validatedData),
     });
 
     redirect("/thanks");
