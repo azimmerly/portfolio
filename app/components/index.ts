@@ -1,4 +1,4 @@
-export { About } from "./About";
+export { AboutMe } from "./AboutMe";
 export { ContactForm } from "./ContactForm";
 export { ExternalLink } from "./ExternalLink";
 export { Footer } from "./Footer";

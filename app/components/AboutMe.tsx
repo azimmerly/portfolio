@@ -4,9 +4,9 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { ExternalLink } from "@/app/components";
 import avatar from "@/public/avatar.svg";
 
-export const About = () => (
+export const AboutMe = () => (
   <section className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
-    <Image src={avatar} alt="avatar" className="h-52 w-52" />
+    <Image src={avatar} alt="avatar" className="h-52 w-52" priority />
     <div className="flex max-w-lg flex-col gap-3 text-zinc-800">
       <h1 className="font-nunito text-4xl font-bold">
         <span role="img" aria-label="hand waving" className="mr-3">
