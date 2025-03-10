@@ -1,34 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-  }
-
-  html {
-    box-sizing: border-box;
-  }
-
-  body {
-    overflow-y: scroll;
-  }
-
-  a:focus,
-  button:focus {
-    outline-offset: 0.2rem;
-    outline-color: theme(colors.zinc.800);
-  }
-
-  [aria-current] {
-    background-color: theme(colors.zinc.100);
-  }
-
   ::selection {
-    color: theme(colors.white);
-    background-color: theme(colors.zinc.800);
+    color: var(--color-white);
+    background-color: var(--color-zinc-800);
   }
 }

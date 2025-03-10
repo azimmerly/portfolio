@@ -4,9 +4,9 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="flex w-full justify-center pb-3 pt-12">
+    <footer className="flex w-full justify-center pt-12 pb-3">
       <div className="flex items-center gap-1.5 text-zinc-600">
-        <FaRegCopyright className="h-3.5 w-3.5" />
+        <FaRegCopyright className="size-3.5" />
         <p className="text-sm font-medium">{currentYear} Andrew Zimmerly</p>
       </div>
     </footer>

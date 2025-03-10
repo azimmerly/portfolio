@@ -1,8 +1,10 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaGithub } from "react-icons/fa6";
+import { twMerge } from "tailwind-merge";
 
 import { ExternalLink } from "@/app/components";
+import { nunitoFont } from "@/app/fonts";
 
 export type ProjectCardProps = {
   image: StaticImageData;
@@ -26,16 +28,18 @@ export const ProjectCard = ({
       <Image
         src={image}
         alt={title}
-        className="h-auto w-full max-w-md rounded shadow lg:w-96"
+        className="h-auto w-full max-w-md rounded-sm shadow-sm lg:w-96"
       />
     </Link>
     <div className="flex max-w-md flex-col gap-3 lg:max-w-full">
-      <h2 className="font-nunito text-3xl font-semibold">{title}</h2>
+      <h2 className={twMerge("text-2xl font-bold", nunitoFont.className)}>
+        {title}
+      </h2>
       <div className="mb-1 flex flex-wrap gap-1">
         {tech.map((techItem) => (
           <p
             key={techItem}
-            className="rounded-lg bg-zinc-100 px-2.5 py-0.5 text-sm font-medium text-zinc-800"
+            className="rounded-lg bg-zinc-100 px-2.5 py-0.5 text-sm font-medium"
           >
             {techItem}
           </p>
@@ -44,11 +48,11 @@ export const ProjectCard = ({
       <p className="mb-1 flex leading-7">{description}</p>
       <div className="flex gap-2">
         <ExternalLink href={projectLink}>
-          <FaArrowRight className="h-4 w-4" />
+          <FaArrowRight className="size-4" />
           View Project
         </ExternalLink>
         <ExternalLink href={githubLink}>
-          <FaGithub className="h-4 w-4" />
+          <FaGithub className="size-4" />
           GitHub
         </ExternalLink>
       </div>
