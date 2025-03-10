@@ -1,10 +1,10 @@
 import { twMerge } from "tailwind-merge";
 
-import { ContactForm } from "@/app/components";
-import { nunitoFont } from "@/app/fonts";
+import { ContactForm } from "@/components/ContactForm";
+import { nunitoFont } from "@/fonts";
 
 const Contact = () => (
-  <div className="my-16 flex flex-col items-center gap-6">
+  <div className="my-12 flex flex-col items-center gap-6 lg:my-20">
     <h1 className={twMerge("text-4xl font-bold", nunitoFont.className)}>
       Contact me
     </h1>
