@@ -81,7 +81,7 @@ export const ContactForm = () => {
         aria-busy={isSubmitting}
         disabled={isSubmitting}
         className={twMerge(
-          "mt-4 flex items-center gap-1.5 self-center rounded-full border-none bg-gray-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-700",
+          "mt-4 flex items-center gap-1.5 self-center rounded-full border-none bg-gray-800 px-4 py-2 text-sm font-medium text-white outline-offset-2 transition hover:bg-gray-700 focus:outline-gray-800",
           isSubmitting ? "pointer-events-none opacity-70" : "cursor-pointer",
         )}
       >
