@@ -5,9 +5,9 @@ export const Footer = () => {
 
   return (
     <footer className="flex w-full justify-center pt-12 pb-3">
-      <div className="flex items-center gap-1.5 text-gray-600">
-        <FaRegCopyright className="size-3.5" />
-        <p className="text-sm font-medium">{currentYear} Andrew Zimmerly</p>
+      <div className="flex items-center gap-1 text-gray-500">
+        <FaRegCopyright className="size-3" />
+        <p className="text-xs font-medium">{currentYear} Andrew Zimmerly</p>
       </div>
     </footer>
   );
