@@ -18,10 +18,10 @@ export const ExternalLink = ({
     target="_blank"
     rel="noopener noreferrer"
     className={twMerge(
-      "flex items-center text-sm font-medium outline-offset-2 transition focus:outline-gray-800",
+      "flex transform-gpu items-center text-sm font-medium outline-offset-2 transition will-change-transform focus:outline-gray-800",
       minimal
         ? "-mx-1 gap-0.5 rounded px-1 underline hover:text-gray-800/80"
-        : "gap-1 rounded-full border-none bg-gray-800 px-3.5 py-2 text-white hover:bg-gray-700",
+        : "gap-1 rounded-full border-none bg-gray-800 px-3.5 py-2 text-white hover:scale-102 hover:bg-gray-700",
     )}
   >
     {children}

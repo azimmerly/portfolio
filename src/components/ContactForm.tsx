@@ -36,7 +36,7 @@ export const ContactForm = () => {
       onSubmit={handleSubmit(handleSendMessage)}
       className="flex w-full max-w-lg flex-col items-start"
     >
-      <div className="mb-0.5 flex items-center gap-2">
+      <div className="mb-1 flex items-center gap-2">
         <label htmlFor="name" className="text-sm font-medium">
           Name
         </label>
@@ -46,9 +46,9 @@ export const ContactForm = () => {
         id="name"
         {...register("name")}
         maxLength={30}
-        className="mb-2 w-full resize-none rounded-md border-2 border-solid border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:border-gray-800 active:border-gray-800"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-solid border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
       />
-      <div className="mb-0.5 flex items-center gap-2">
+      <div className="mb-1 flex items-center gap-2">
         <label htmlFor="email" className="text-sm font-medium">
           Email
         </label>
@@ -59,9 +59,9 @@ export const ContactForm = () => {
       <input
         id="email"
         {...register("email")}
-        className="mb-2 w-full resize-none rounded-md border-2 border-solid border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:border-gray-800 active:border-gray-800"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-solid border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
       />
-      <div className="mb-0.5 flex items-center gap-2">
+      <div className="mb-1 flex items-center gap-2">
         <label htmlFor="message" className="text-sm font-medium">
           Message
         </label>
@@ -74,14 +74,14 @@ export const ContactForm = () => {
         id="message"
         {...register("message")}
         maxLength={1000}
-        className="mb-2 w-full resize-none rounded-md border-2 border-solid border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:border-gray-800 active:border-gray-800"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-solid border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
       />
       <button
         type="submit"
         aria-busy={isSubmitting}
         disabled={isSubmitting}
         className={twMerge(
-          "mt-4 flex items-center gap-1.5 self-center rounded-full border-none bg-gray-800 px-4 py-2 text-sm font-medium text-white outline-offset-2 transition hover:bg-gray-700 focus:outline-gray-800",
+          "mt-4 flex transform-gpu items-center gap-1.5 self-center rounded-full border-none bg-gray-800 px-4 py-2 text-sm font-medium text-white outline-offset-2 transition will-change-transform hover:scale-102 hover:bg-gray-700 focus:outline-gray-800",
           isSubmitting ? "pointer-events-none opacity-70" : "cursor-pointer",
         )}
       >
