@@ -61,7 +61,7 @@ export const ProjectList = () => (
             draggable={false}
             src={project.image}
             alt={project.title}
-            className="rounded-md shadow-sm lg:h-[276px] lg:w-96"
+            className="rounded-md shadow-sm transition hover:scale-101 lg:h-[276px] lg:w-96"
           />
         </Link>
         <div className="flex max-w-lg flex-col gap-2 lg:max-w-full">
