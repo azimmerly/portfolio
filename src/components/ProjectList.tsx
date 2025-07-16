@@ -22,11 +22,11 @@ const PROJECTS = [
       "NextJS",
       "Typescript",
       "Tailwind CSS",
-      "Dark mode",
       "Better Auth",
       "PostgreSQL",
       "Drizzle ORM",
       "Movie Database API",
+      "Dark mode",
     ],
     link: "https://movie-tracker.andrewzimmerly.com",
     githubLink: "https://github.com/azimmerly/movie-tracker",
@@ -36,8 +36,8 @@ const PROJECTS = [
     icon: gradientIcon,
     title: "Gradient Generator",
     description:
-      "A simple CSS color gradient generator. You can customize the colors and direction of the gradient, and the resulting CSS code is available in HEX, RGB, or HSL formats for easy copying to the clipboard.",
-    tech: ["React", "Typescript", "Emotion CSS"],
+      "A simple and intuitive CSS gradient generator. Gradients can be customized using draggable color stops and set to either linear or radial style, with a live preview. The generated CSS code can then be copied to the clipboard.",
+    tech: ["React", "Typescript", "Tailwind CSS", "Zustand", "Drag and drop"],
     link: "https://gradient-generator.andrewzimmerly.com",
     githubLink: "https://github.com/azimmerly/gradient-generator",
   },
@@ -61,7 +61,7 @@ export const ProjectList = () => (
             draggable={false}
             src={project.image}
             alt={project.title}
-            className="rounded-md shadow-sm transition hover:scale-101 lg:h-[276px] lg:w-96"
+            className="rounded-md shadow-sm transition ease-out hover:scale-101 hover:shadow-md lg:h-[276px] lg:w-96"
           />
         </Link>
         <div className="flex max-w-lg flex-col gap-2 lg:max-w-full">
