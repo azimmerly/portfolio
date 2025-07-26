@@ -13,15 +13,13 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en" className={interFont.className}>
-    <body className="overflow-x-hidden overflow-y-scroll">
-      <div className="flex min-h-screen flex-col items-center text-gray-800 antialiased">
-        <main className="flex w-full max-w-6xl flex-auto flex-col px-4">
-          <Nav />
-          {children}
-        </main>
-        <Footer />
-        <Toaster richColors position="bottom-left" />
-      </div>
+    <body className="flex min-h-screen flex-col items-center text-gray-800 antialiased">
+      <main className="flex w-full max-w-6xl flex-auto flex-col px-2.5">
+        <Nav />
+        {children}
+      </main>
+      <Footer />
+      <Toaster richColors position="bottom-left" />
     </body>
   </html>
 );

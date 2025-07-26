@@ -1,6 +1,6 @@
 import { redirect, RedirectType } from "next/navigation";
 
-const NotFound = () => {
+const NotFound = async () => {
   redirect("/", RedirectType.replace);
 };
 

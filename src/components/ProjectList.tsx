@@ -7,7 +7,7 @@ import gradientIcon from "@/assets/gradient-icon.png";
 import gradientImage from "@/assets/gradient-image.png";
 import movieIcon from "@/assets/movie-icon.png";
 import movieImage from "@/assets/movie-image.png";
-import { ExternalLink } from "@/components/ExternalLink";
+import { ButtonLink } from "@/components/ButtonLink";
 import { nunitoFont } from "@/fonts";
 
 const PROJECTS = [
@@ -44,27 +44,27 @@ const PROJECTS = [
 ] as const;
 
 export const ProjectList = () => (
-  <section className="flex flex-col gap-14 lg:gap-18">
+  <section className="flex flex-col gap-14 md:gap-18">
     {PROJECTS.map((project, index) => (
       <div
         key={index}
-        className="mx-auto flex flex-col items-start gap-4 lg:flex-row lg:gap-6"
+        className="mx-auto flex flex-col items-start gap-4 md:flex-row md:gap-6"
       >
         <Link
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="max-w-md shrink-0 rounded-md outline-offset-2 focus:outline-gray-800"
+          className="max-w-md shrink-0 rounded-md"
         >
           <Image
             priority
             draggable={false}
             src={project.image}
             alt={project.title}
-            className="rounded-md shadow-sm transition ease-out hover:scale-101 hover:shadow-md lg:h-[276px] lg:w-96"
+            className="rounded-md shadow-sm transition ease-out hover:scale-101 hover:shadow-md md:h-[276px] md:w-96"
           />
         </Link>
-        <div className="flex max-w-lg flex-col gap-2 lg:max-w-full">
+        <div className="flex max-w-xl flex-col gap-2 md:max-w-full">
           <h2
             className={twMerge(
               "flex items-center gap-1 text-2xl font-bold",
@@ -81,18 +81,16 @@ export const ProjectList = () => (
               </p>
             ))}
           </div>
-          <p className="my-1 flex leading-6.5 text-pretty">
+          <p className="my-1 flex text-justify text-pretty md:leading-6.5">
             {project.description}
           </p>
           <div className="flex gap-1.5">
-            <ExternalLink href={project.link}>
-              <FaArrowRight className="size-3.5" />
-              View Project
-            </ExternalLink>
-            <ExternalLink href={project.githubLink}>
-              <FaGithub className="size-3.5" />
+            <ButtonLink icon={FaArrowRight} href={project.link}>
+              View project
+            </ButtonLink>
+            <ButtonLink icon={FaGithub} href={project.githubLink} secondary>
               GitHub
-            </ExternalLink>
+            </ButtonLink>
           </div>
         </div>
       </div>

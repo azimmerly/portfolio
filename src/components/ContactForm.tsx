@@ -14,6 +14,7 @@ import { type FormData, formSchema } from "@/validation";
 
 export const ContactForm = () => {
   const {
+    reset,
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
@@ -27,14 +28,16 @@ export const ContactForm = () => {
       toast.success("Thanks for getting in touch!");
       redirect("/");
     } else {
+      reset();
       toast.error("Something went wrong");
     }
   };
 
   return (
     <form
+      autoComplete="off"
       onSubmit={handleSubmit(handleSendMessage)}
-      className="flex w-full max-w-lg flex-col items-start"
+      className="flex w-full max-w-sm flex-col items-start md:max-w-lg"
     >
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="name" className="text-sm font-medium">
@@ -46,7 +49,7 @@ export const ContactForm = () => {
         id="name"
         {...register("name")}
         maxLength={30}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-solid border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
       />
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="email" className="text-sm font-medium">
@@ -59,7 +62,7 @@ export const ContactForm = () => {
       <input
         id="email"
         {...register("email")}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-solid border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
       />
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="message" className="text-sm font-medium">
@@ -74,15 +77,15 @@ export const ContactForm = () => {
         id="message"
         {...register("message")}
         maxLength={1000}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-solid border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
       />
       <button
         type="submit"
         aria-busy={isSubmitting}
         disabled={isSubmitting}
         className={twMerge(
-          "mt-4 flex transform-gpu items-center gap-1.5 self-center rounded-full border-none bg-gray-800 px-4 py-2 text-sm font-medium text-white outline-offset-2 transition will-change-transform hover:scale-102 hover:bg-gray-700 focus:outline-gray-800",
-          isSubmitting ? "pointer-events-none opacity-70" : "cursor-pointer",
+          "mt-4 flex w-full transform-gpu items-center justify-center gap-1.5 self-center rounded-lg border-none bg-gray-800 px-5 py-2 text-sm font-medium text-white transition will-change-transform hover:scale-102 active:scale-99 md:w-fit",
+          isSubmitting ? "pointer-events-none bg-gray-600" : "cursor-pointer",
         )}
       >
         {isSubmitting ? (
@@ -90,7 +93,7 @@ export const ContactForm = () => {
         ) : (
           <FaRegPaperPlane className="size-3.5" aria-hidden="true" />
         )}
-        Send Message
+        Send message
       </button>
     </form>
   );

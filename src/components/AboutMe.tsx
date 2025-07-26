@@ -7,34 +7,35 @@ import { ExternalLink } from "@/components/ExternalLink";
 import { nunitoFont } from "@/fonts";
 
 export const AboutMe = () => (
-  <section className="flex flex-col items-center justify-center gap-6 lg:flex-row">
+  <section className="flex flex-col items-center justify-center gap-6 md:flex-row">
     <Image
       priority
       draggable={false}
       src={avatar}
       alt="avatar"
-      className="size-36 lg:size-44"
+      className="size-36 md:size-44"
     />
     <div className="flex max-w-lg flex-col gap-2">
       <h1
         className={twMerge(
-          "text-3xl font-bold lg:text-4xl",
+          "text-3xl font-bold md:text-4xl",
           nunitoFont.className,
         )}
       >
         Hello!
       </h1>
-      <p className="text-pretty lg:leading-6.5">
+      <p className="text-justify text-pretty md:leading-6.5">
         My name is Andrew and I’m a web developer from San Diego. Here you can
         view some of my projects and get in touch.
       </p>
-      <div className="flex gap-4">
-        <ExternalLink href="https://github.com/azimmerly" minimal>
-          <FaGithub className="size-3.5" />
+      <div className="flex gap-2.5">
+        <ExternalLink icon={FaGithub} href="https://github.com/azimmerly">
           GitHub
         </ExternalLink>
-        <ExternalLink href="https://linkedin.com/in/andrewzimmerly" minimal>
-          <FaLinkedin className="size-3.5" />
+        <ExternalLink
+          icon={FaLinkedin}
+          href="https://linkedin.com/in/andrewzimmerly"
+        >
           LinkedIn
         </ExternalLink>
       </div>

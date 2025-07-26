@@ -1,25 +1,25 @@
 "use client";
 
-import Link, { type LinkProps } from "next/link";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 
 type NavLinkProps = {
+  href: string;
   children: React.ReactNode;
-} & LinkProps;
+};
 
-export const NavLink = ({ children, href, ...props }: NavLinkProps) => {
+export const NavLink = ({ href, children }: NavLinkProps) => {
   const pathname = usePathname();
   const ariaCurrent = href === pathname ? "page" : undefined;
 
   return (
     <Link
-      {...props}
       href={href}
       aria-current={ariaCurrent}
       className={twMerge(
-        "flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium transition focus:outline-gray-800",
-        ariaCurrent ? "bg-gray-200/70" : "hover:bg-gray-200/70",
+        "flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-medium transition",
+        ariaCurrent ? "bg-gray-200/80" : "hover:bg-gray-200/80",
       )}
     >
       {children}
