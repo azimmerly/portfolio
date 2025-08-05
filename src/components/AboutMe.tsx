@@ -7,7 +7,7 @@ import { ExternalLink } from "@/components/ExternalLink";
 import { nunitoFont } from "@/fonts";
 
 export const AboutMe = () => (
-  <section className="flex flex-col items-center justify-center gap-6 md:flex-row">
+  <section className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:flex-row">
     <Image
       priority
       draggable={false}
