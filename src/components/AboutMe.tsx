@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { twMerge } from "tailwind-merge";
 
@@ -15,7 +16,7 @@ export const AboutMe = () => (
       alt="avatar"
       className="size-36 md:size-44"
     />
-    <div className="flex max-w-lg flex-col gap-2">
+    <div className="flex max-w-lg flex-col gap-3 sm:gap-2">
       <h1
         className={twMerge(
           "text-3xl font-bold md:text-4xl",
@@ -24,9 +25,16 @@ export const AboutMe = () => (
       >
         Hello!
       </h1>
-      <p className="text-justify text-pretty md:leading-6.5">
+      <p className="text-justify text-[15px] text-pretty md:text-base md:leading-6.5">
         My name is Andrew and I’m a web developer from San Diego. Here you can
-        view some of my projects and get in touch.
+        view some of my projects and{" "}
+        <Link
+          href="/contact"
+          className="underline underline-offset-[1.5px] transition-colors hover:text-gray-600"
+        >
+          get in touch
+        </Link>
+        .
       </p>
       <div className="flex gap-2.5">
         <ExternalLink icon={FaGithub} href="https://github.com/azimmerly">

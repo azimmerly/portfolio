@@ -74,14 +74,14 @@ export const ProjectList = () => (
             <Image src={project.icon} alt={project.title} className="size-6" />
             {project.title}
           </h2>
-          <div className="flex max-w-2xl flex-wrap gap-1 text-sm font-medium">
+          <div className="flex max-w-2xl flex-wrap gap-1 text-[13px] font-medium md:text-sm">
             {project.tech.map((tech, index) => (
               <p key={index} className="rounded-md bg-gray-200/70 px-1.5 py-px">
                 {tech}
               </p>
             ))}
           </div>
-          <p className="my-1 flex text-justify text-pretty md:leading-6.5">
+          <p className="my-1 flex text-justify text-[15px] text-pretty md:text-base md:leading-6.5">
             {project.description}
           </p>
           <div className="flex gap-1.5">
