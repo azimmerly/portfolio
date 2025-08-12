@@ -8,7 +8,7 @@ import { ExternalLink } from "@/components/ExternalLink";
 import { nunitoFont } from "@/fonts";
 
 export const AboutMe = () => (
-  <section className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:flex-row">
+  <section className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6">
     <Image
       priority
       draggable={false}
@@ -16,7 +16,7 @@ export const AboutMe = () => (
       alt="avatar"
       className="size-36 md:size-44"
     />
-    <div className="flex max-w-lg flex-col gap-3 sm:gap-2">
+    <div className="flex max-w-lg flex-col gap-3 md:gap-2">
       <h1
         className={twMerge(
           "text-3xl font-bold md:text-4xl",
