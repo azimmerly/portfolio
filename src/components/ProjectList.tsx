@@ -76,7 +76,7 @@ export const ProjectList = () => (
           </h2>
           <div className="flex max-w-2xl flex-wrap gap-1 text-[13px] font-medium md:text-sm">
             {project.tech.map((tech, index) => (
-              <p key={index} className="rounded-md bg-gray-200/70 px-1.5 py-px">
+              <p key={index} className="rounded bg-gray-200/70 px-1.5 py-px">
                 {tech}
               </p>
             ))}

@@ -5,7 +5,12 @@ import { nunitoFont } from "@/fonts";
 
 const Contact = () => (
   <div className="my-12 flex flex-col items-center gap-6 md:my-20">
-    <h1 className={twMerge("text-4xl font-bold", nunitoFont.className)}>
+    <h1
+      className={twMerge(
+        "text-3xl font-bold md:text-4xl",
+        nunitoFont.className,
+      )}
+    >
       Contact me
     </h1>
     <ContactForm />
