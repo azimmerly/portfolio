@@ -49,7 +49,7 @@ export const ContactForm = () => {
         id="name"
         {...register("name")}
         maxLength={30}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden transition focus:border-indigo-600"
       />
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="email" className="text-sm font-medium">
@@ -62,7 +62,7 @@ export const ContactForm = () => {
       <input
         id="email"
         {...register("email")}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden transition focus:border-indigo-600"
       />
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="message" className="text-sm font-medium">
@@ -77,15 +77,15 @@ export const ContactForm = () => {
         id="message"
         {...register("message")}
         maxLength={1000}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-100 px-2 py-1 outline-hidden transition focus:scale-101 focus:border-gray-800"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden transition focus:border-indigo-600"
       />
       <button
         type="submit"
         aria-busy={isSubmitting}
         disabled={isSubmitting}
         className={twMerge(
-          "mt-4 flex w-full transform-gpu items-center justify-center gap-1.5 self-center rounded-md border-none bg-gray-800 px-5 py-2 text-sm font-medium text-white transition-transform will-change-transform hover:scale-102 active:scale-99 md:w-fit",
-          isSubmitting ? "pointer-events-none bg-gray-600" : "cursor-pointer",
+          "mt-4 flex w-full items-center justify-center gap-1.5 self-center rounded-md border-none bg-gradient-to-br from-gray-700 to-indigo-600 px-4 py-2 text-sm font-medium text-white shadow transition will-change-transform hover:brightness-120 active:scale-99 md:w-fit",
+          isSubmitting ? "pointer-events-none opacity-85" : "cursor-pointer",
         )}
       >
         {isSubmitting ? (

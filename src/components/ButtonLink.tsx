@@ -19,8 +19,10 @@ export const ButtonLink = ({
     target="_blank"
     rel="noopener noreferrer"
     className={twMerge(
-      "flex transform-gpu items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium transition-transform will-change-transform hover:scale-102",
-      secondary ? "border border-gray-800 bg-white" : "bg-gray-800 text-white",
+      "flex items-center gap-1 rounded-md bg-gradient-to-br px-3.5 py-[7px] text-sm font-medium shadow transition",
+      secondary
+        ? "from-gray-100 to-gray-200 hover:brightness-97"
+        : "from-gray-700 to-indigo-600 text-white hover:brightness-120",
     )}
   >
     <Icon className="size-3.5" aria-hidden="true" />

@@ -54,7 +54,7 @@ export const ProjectList = () => (
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="max-w-md shrink-0 rounded-md"
+          className="max-w-md shrink-0 rounded-lg"
         >
           <Image
             priority
@@ -84,7 +84,7 @@ export const ProjectList = () => (
           <p className="my-1 flex text-justify text-[15px] text-pretty md:text-base md:leading-6.5">
             {project.description}
           </p>
-          <div className="flex gap-1.5">
+          <div className="flex gap-2">
             <ButtonLink icon={FaArrowRight} href={project.link}>
               View project
             </ButtonLink>
