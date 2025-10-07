@@ -8,24 +8,24 @@ import { ExternalLink } from "@/components/ExternalLink";
 import { nunitoFont } from "@/fonts";
 
 export const AboutMe = () => (
-  <section className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6">
+  <section className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:gap-6">
     <Image
       priority
       draggable={false}
       src={avatar}
       alt="avatar"
-      className="size-36 md:size-44"
+      className="size-36 lg:size-44"
     />
-    <div className="flex max-w-lg flex-col gap-3 md:gap-2">
+    <div className="flex max-w-lg flex-col gap-3 lg:gap-2">
       <h1
         className={twMerge(
-          "text-3xl font-bold md:text-4xl",
+          "text-3xl font-bold lg:text-4xl",
           nunitoFont.className,
         )}
       >
         Hello!
       </h1>
-      <p className="text-justify text-[15px] text-pretty md:text-base md:leading-6.5">
+      <p className="text-justify text-[15px] text-pretty lg:text-base lg:leading-6.5">
         My name is Andrew and I’m a web developer from San Diego. Here you can
         view some of my projects and{" "}
         <Link

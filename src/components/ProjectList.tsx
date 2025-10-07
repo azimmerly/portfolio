@@ -10,7 +10,7 @@ import movieImage from "@/assets/movie-image.png";
 import { ButtonLink } from "@/components/ButtonLink";
 import { nunitoFont } from "@/fonts";
 
-const PROJECTS = [
+const projects = [
   {
     image: movieImage,
     icon: movieIcon,
@@ -44,11 +44,11 @@ const PROJECTS = [
 ] as const;
 
 export const ProjectList = () => (
-  <section className="flex flex-col gap-14 md:gap-18">
-    {PROJECTS.map((project, index) => (
+  <section className="flex flex-col gap-14 lg:gap-18">
+    {projects.map((project) => (
       <div
-        key={index}
-        className="mx-auto flex flex-col items-start gap-4 md:flex-row md:gap-6"
+        key={project.title}
+        className="mx-auto flex flex-col items-start gap-4 lg:flex-row lg:gap-6"
       >
         <Link
           href={project.link}
@@ -59,29 +59,35 @@ export const ProjectList = () => (
           <Image
             priority
             draggable={false}
+            placeholder="blur"
             src={project.image}
             alt={project.title}
-            className="rounded-lg shadow-sm transition ease-out hover:scale-101 hover:shadow-md md:h-[276px] md:w-96"
+            className="rounded-lg shadow-sm transition ease-out hover:scale-101 hover:shadow-md lg:h-[276px] lg:w-96"
           />
         </Link>
-        <div className="flex max-w-xl flex-col gap-2 md:max-w-full">
+        <div className="flex max-w-xl flex-col gap-2 lg:max-w-full">
           <h2
             className={twMerge(
               "flex items-center gap-1 text-2xl font-bold",
               nunitoFont.className,
             )}
           >
-            <Image src={project.icon} alt={project.title} className="size-6" />
+            <Image
+              src={project.icon}
+              alt={project.title}
+              aria-hidden="true"
+              className="size-6"
+            />
             {project.title}
           </h2>
-          <div className="flex max-w-2xl flex-wrap gap-1 text-[13px] font-medium md:text-sm">
-            {project.tech.map((tech, index) => (
-              <p key={index} className="rounded bg-gray-200/70 px-1.5 py-px">
+          <ul className="flex max-w-2xl flex-wrap gap-1 text-[13px] font-medium lg:text-sm">
+            {project.tech.map((tech) => (
+              <li key={tech} className="rounded bg-gray-200/80 px-1.5 py-0.5">
                 {tech}
-              </p>
+              </li>
             ))}
-          </div>
-          <p className="my-1 flex text-justify text-[15px] text-pretty md:text-base md:leading-6.5">
+          </ul>
+          <p className="my-1 flex text-justify text-[15px] text-pretty lg:text-base lg:leading-6.5">
             {project.description}
           </p>
           <div className="flex gap-2">
