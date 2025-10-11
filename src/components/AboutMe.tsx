@@ -30,7 +30,7 @@ export const AboutMe = () => (
         view some of my projects and{" "}
         <Link
           href="/contact"
-          className="rounded underline underline-offset-[1.5px] transition-colors hover:text-gray-600"
+          className="rounded underline underline-offset-[1.5px] hover:opacity-75"
         >
           get in touch
         </Link>

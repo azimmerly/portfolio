@@ -87,7 +87,7 @@ export const ContactForm = () => {
         aria-busy={isSubmitting}
         disabled={isSubmitting}
         className={twMerge(
-          "mt-4 flex w-full items-center justify-center gap-1.5 self-center rounded-md border-none bg-gradient-to-br from-gray-700 to-indigo-600 px-4 py-2 text-sm font-medium text-white shadow transition will-change-transform hover:brightness-120 active:scale-99 lg:w-fit",
+          "shimmer mt-4 flex w-full items-center justify-center gap-1.5 self-center rounded-md border-none bg-gradient-to-br from-gray-700 to-indigo-600 px-4 py-2 text-sm font-medium text-white shadow transition will-change-transform hover:brightness-120 active:scale-99 lg:w-fit",
           isSubmitting ? "pointer-events-none opacity-85" : "cursor-pointer",
         )}
       >
