@@ -20,13 +20,13 @@ const projects = [
     tech: [
       "React",
       "NextJS",
-      "Typescript",
+      "TypeScript",
       "Tailwind CSS",
       "Better Auth",
       "PostgreSQL",
       "Drizzle ORM",
       "Movie Database API",
-      "Dark mode",
+      "Dark Mode",
     ],
     link: "https://movie-tracker.andrewzimmerly.com",
     githubLink: "https://github.com/azimmerly/movie-tracker",
@@ -37,7 +37,14 @@ const projects = [
     title: "Gradient Generator",
     description:
       "A simple and intuitive CSS gradient generator. Gradients can be customized using draggable color stops and set to either linear or radial style, with a live preview. The generated CSS code can then be copied to the clipboard.",
-    tech: ["React", "Typescript", "Tailwind CSS", "Zustand", "Drag and drop"],
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Zustand",
+      "Drag and Drop",
+    ],
     link: "https://gradient-generator.andrewzimmerly.com",
     githubLink: "https://github.com/azimmerly/gradient-generator",
   },
@@ -46,15 +53,16 @@ const projects = [
 export const ProjectList = () => (
   <section className="flex flex-col gap-14 lg:gap-18">
     {projects.map((project) => (
-      <div
+      <article
         key={project.title}
         className="mx-auto flex flex-col items-start gap-4 lg:flex-row lg:gap-6"
       >
         <Link
           href={project.link}
+          aria-label={project.title}
           target="_blank"
           rel="noopener noreferrer"
-          className="max-w-md shrink-0 rounded-lg"
+          className="max-w-md shrink-0 overflow-hidden rounded-xl shadow transition ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform hover:-translate-y-[2px] hover:scale-101 hover:shadow-md"
         >
           <Image
             priority
@@ -62,7 +70,8 @@ export const ProjectList = () => (
             placeholder="blur"
             src={project.image}
             alt={project.title}
-            className="rounded-lg shadow transition ease-out hover:scale-101 hover:shadow-md lg:h-[276px] lg:w-96"
+            className="rounded-xl object-cover lg:h-[276px] lg:w-96"
+            sizes="(max-width: 1024px) 100vw, 384px"
           />
         </Link>
         <div className="flex max-w-xl flex-col gap-2 lg:max-w-full">
@@ -73,10 +82,10 @@ export const ProjectList = () => (
             )}
           >
             <Image
-              src={project.icon}
-              alt={project.title}
+              alt=""
               aria-hidden="true"
               className="size-6"
+              src={project.icon}
             />
             {project.title}
           </h2>
@@ -99,7 +108,7 @@ export const ProjectList = () => (
             </ButtonLink>
           </div>
         </div>
-      </div>
+      </article>
     ))}
   </section>
 );
