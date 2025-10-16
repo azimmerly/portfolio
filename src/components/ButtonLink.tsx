@@ -19,10 +19,10 @@ export const ButtonLink = ({
     target="_blank"
     rel="noopener noreferrer"
     className={twMerge(
-      "flex items-center gap-1 rounded-md bg-gradient-to-br px-3.5 py-[7px] text-sm font-medium shadow transition",
+      "flex w-full items-center justify-center gap-1 rounded-md bg-gradient-to-br px-4 py-2 text-sm font-medium shadow transition lg:w-fit",
       secondary
         ? "from-gray-100 to-gray-200 hover:brightness-97"
-        : "shimmer from-gray-700 to-indigo-600 text-white hover:brightness-120",
+        : "animate-shimmer from-blue-500 to-blue-700 text-white hover:brightness-120",
     )}
   >
     <Icon className="size-3.5" aria-hidden="true" />

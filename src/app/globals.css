@@ -7,8 +7,7 @@
   }
 
   :focus-visible {
-    outline-offset: 1px;
-    outline: 2px solid theme("colors.indigo.600");
+    outline: 2px solid theme("colors.blue.600");
   }
 }
 
@@ -22,12 +21,12 @@
     }
   }
 
-  .shimmer {
+  .animate-shimmer {
     overflow: hidden;
     position: relative;
   }
 
-  .shimmer::before {
+  .animate-shimmer::before {
     content: "";
     position: absolute;
     top: 0;
@@ -46,7 +45,7 @@
     );
   }
 
-  .shimmer:hover::before {
+  .animate-shimmer:hover::before {
     animation: shimmer 0.8s ease-out forwards;
   }
 }
