@@ -8,7 +8,7 @@ export const ValidationError = ({ text }: ValidationErrorProps) => (
   <span
     role="alert"
     aria-live="assertive"
-    className="flex items-center gap-1 rounded bg-red-50 px-1.5 py-px text-xs text-red-700"
+    className="flex items-center gap-1 rounded bg-red-300/20 px-1.5 py-px text-xs text-red-700"
   >
     <FaTriangleExclamation aria-hidden="true" className="size-2.5" />
     {text}

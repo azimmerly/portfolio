@@ -1,13 +1,12 @@
 "use client";
 
-import Link from "next/link";
+import Link, { type LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 
 type NavLinkProps = {
-  href: string;
   children: React.ReactNode;
-};
+} & LinkProps<string>;
 
 export const NavLink = ({ href, children }: NavLinkProps) => {
   const pathname = usePathname();

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en" className={interFont.className}>
-    <body className="flex min-h-screen flex-col items-center text-gray-800 antialiased">
+    <body className="flex min-h-screen flex-col items-center text-gray-900 antialiased">
       <main className="flex w-full max-w-6xl flex-auto flex-col px-3.5">
         <Nav />
         {children}

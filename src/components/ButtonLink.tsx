@@ -6,7 +6,7 @@ type ButtonLinkProps = {
   icon: IconType;
   secondary?: boolean;
   children: React.ReactNode;
-} & LinkProps;
+} & LinkProps<string>;
 
 export const ButtonLink = ({
   secondary,

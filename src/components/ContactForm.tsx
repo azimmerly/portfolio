@@ -48,7 +48,7 @@ export const ContactForm = () => {
       <input
         id="name"
         {...register("name")}
-        maxLength={30}
+        maxLength={50}
         aria-invalid={!!errors.name}
         className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden transition focus:border-blue-600"
       />
@@ -63,6 +63,7 @@ export const ContactForm = () => {
       <input
         id="email"
         {...register("email")}
+        maxLength={100}
         aria-invalid={!!errors.email}
         className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden transition focus:border-blue-600"
       />

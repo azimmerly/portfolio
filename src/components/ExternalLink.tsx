@@ -4,7 +4,7 @@ import type { IconType } from "react-icons";
 type ExternalLinkProps = {
   icon: IconType;
   children: React.ReactNode;
-} & LinkProps;
+} & LinkProps<string>;
 
 export const ExternalLink = ({
   icon: Icon,
