@@ -62,7 +62,7 @@ export const ProjectList = () => (
           aria-label={project.title}
           target="_blank"
           rel="noopener noreferrer"
-          className="max-w-md shrink-0 overflow-hidden rounded-xl shadow transition ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform hover:-translate-y-[2px] hover:scale-101 hover:shadow-md"
+          className="max-w-md shrink-0 overflow-hidden rounded-xl shadow transition ease-out will-change-transform hover:-translate-y-[2px] hover:scale-101 hover:shadow-md"
         >
           <Image
             priority
@@ -91,7 +91,10 @@ export const ProjectList = () => (
           </h2>
           <ul className="flex max-w-2xl flex-wrap gap-1 text-[13px] font-medium lg:text-sm">
             {project.tech.map((tech) => (
-              <li key={tech} className="rounded bg-gray-200/80 px-1.5 py-0.5">
+              <li
+                key={tech}
+                className="rounded bg-gray-200/80 px-1.5 py-0.5 dark:bg-gray-800"
+              >
                 {tech}
               </li>
             ))}

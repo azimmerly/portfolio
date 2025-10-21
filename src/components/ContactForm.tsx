@@ -50,7 +50,7 @@ export const ContactForm = () => {
         {...register("name")}
         maxLength={50}
         aria-invalid={!!errors.name}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden transition focus:border-blue-600"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800"
       />
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="email" className="text-sm font-medium">
@@ -65,7 +65,7 @@ export const ContactForm = () => {
         {...register("email")}
         maxLength={100}
         aria-invalid={!!errors.email}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden transition focus:border-blue-600"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800"
       />
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="message" className="text-sm font-medium">
@@ -81,14 +81,14 @@ export const ContactForm = () => {
         {...register("message")}
         maxLength={1000}
         aria-invalid={!!errors.message}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden transition focus:border-blue-600"
+        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800"
       />
       <button
         type="submit"
         aria-busy={isSubmitting}
         disabled={isSubmitting}
         className={twMerge(
-          "animate-shimmer mt-4 flex w-full items-center justify-center gap-1.5 self-center rounded-md border-none bg-gradient-to-br from-blue-500 to-blue-700 px-4 py-2 text-sm font-medium text-white shadow transition will-change-transform hover:brightness-120 active:scale-99 lg:w-fit",
+          "animate-shimmer mt-4 flex w-full items-center justify-center gap-1.5 self-center rounded-md border-none bg-linear-to-br from-blue-500 to-blue-700 px-4 py-2 text-sm font-medium text-white shadow transition will-change-transform hover:brightness-120 active:scale-99 lg:w-fit",
           isSubmitting ? "pointer-events-none opacity-85" : "cursor-pointer",
         )}
       >

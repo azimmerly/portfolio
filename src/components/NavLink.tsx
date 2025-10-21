@@ -17,10 +17,10 @@ export const NavLink = ({ href, children }: NavLinkProps) => {
       href={href}
       aria-current={ariaCurrent}
       className={twMerge(
-        "flex items-center gap-1 rounded-md bg-gradient-to-br px-4 py-2 text-sm font-medium",
+        "flex items-center gap-1 rounded-md bg-linear-to-br px-4 py-2 text-sm font-medium",
         ariaCurrent
-          ? "pointer-events-none from-gray-100 to-gray-200 shadow"
-          : "hover:from-gray-100 hover:to-gray-200 hover:shadow",
+          ? "pointer-events-none from-gray-100 to-gray-200 shadow dark:from-gray-600/90 dark:to-gray-800"
+          : "hover:from-gray-100 hover:to-gray-200 hover:shadow dark:hover:from-gray-600/90 dark:hover:to-gray-800",
       )}
     >
       {children}
