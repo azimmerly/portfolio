@@ -1,7 +1,6 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { FaRegPaperPlane } from "react-icons/fa6";
 import { toast } from "sonner";
@@ -23,13 +22,17 @@ export const ContactForm = () => {
   });
 
   const handleSendMessage = async (formData: FormData) => {
-    const { success } = await sendMessage(formData);
-    if (success) {
-      toast.success("Thanks for getting in touch!");
-      redirect("/");
-    } else {
+    try {
+      const { success } = await sendMessage(formData);
+      if (success) {
+        toast.success("Thanks for getting in touch!");
+      } else {
+        toast.error("Something went wrong");
+      }
+    } catch {
+      toast.error("Network error, please try again");
+    } finally {
       reset();
-      toast.error("Something went wrong");
     }
   };
 
@@ -49,8 +52,12 @@ export const ContactForm = () => {
         id="name"
         {...register("name")}
         maxLength={50}
+        disabled={isSubmitting}
         aria-invalid={!!errors.name}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800"
+        className={twMerge(
+          "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/60 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800",
+          isSubmitting && "text-gray-500 dark:text-gray-400",
+        )}
       />
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="email" className="text-sm font-medium">
@@ -64,8 +71,12 @@ export const ContactForm = () => {
         id="email"
         {...register("email")}
         maxLength={100}
+        disabled={isSubmitting}
         aria-invalid={!!errors.email}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800"
+        className={twMerge(
+          "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/60 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800",
+          isSubmitting && "text-gray-500 dark:text-gray-400",
+        )}
       />
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="message" className="text-sm font-medium">
@@ -80,8 +91,12 @@ export const ContactForm = () => {
         id="message"
         {...register("message")}
         maxLength={1000}
+        disabled={isSubmitting}
         aria-invalid={!!errors.message}
-        className="mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/80 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800"
+        className={twMerge(
+          "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/60 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800",
+          isSubmitting && "text-gray-500 dark:text-gray-400",
+        )}
       />
       <button
         type="submit"
