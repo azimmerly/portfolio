@@ -62,7 +62,7 @@ export const ProjectList = () => (
           aria-label={project.title}
           target="_blank"
           rel="noopener noreferrer"
-          className="max-w-md shrink-0 overflow-hidden rounded-xl shadow transition ease-out will-change-transform hover:-translate-y-[2px] hover:scale-101 hover:shadow-md"
+          className="max-w-md shrink-0 overflow-hidden rounded-xl shadow transition ease-out will-change-transform hover:-translate-y-0.5 hover:scale-101 hover:shadow-md"
         >
           <Image
             priority
@@ -70,7 +70,7 @@ export const ProjectList = () => (
             placeholder="blur"
             src={project.image}
             alt={project.title}
-            className="rounded-xl object-cover lg:h-[276px] lg:w-96"
+            className="rounded-xl object-cover lg:h-69 lg:w-96"
             sizes="(max-width: 1024px) 100vw, 384px"
           />
         </Link>
