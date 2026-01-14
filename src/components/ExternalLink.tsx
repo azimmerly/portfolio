@@ -15,7 +15,7 @@ export const ExternalLink = ({
     {...props}
     target="_blank"
     rel="noopener noreferrer"
-    className="flex items-center gap-0.75 rounded text-[15px] underline transition-opacity hover:opacity-75"
+    className="flex items-center gap-0.75 rounded text-[15px] underline hover:opacity-75"
   >
     <Icon className="size-3.75" aria-hidden="true" />
     {children}

@@ -62,7 +62,7 @@ export const ProjectList = () => (
           aria-label={project.title}
           target="_blank"
           rel="noopener noreferrer"
-          className="max-w-md shrink-0 overflow-hidden rounded-xl shadow transition ease-out will-change-transform hover:-translate-y-0.5 hover:scale-101 hover:shadow-md"
+          className="max-w-md shrink-0 overflow-hidden rounded-xl shadow"
         >
           <Image
             priority
