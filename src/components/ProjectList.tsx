@@ -93,7 +93,7 @@ export const ProjectList = () => (
             {project.tech.map((tech) => (
               <li
                 key={tech}
-                className="rounded bg-gray-200/80 px-1.5 py-0.5 dark:bg-gray-800"
+                className="rounded bg-gray-200/70 px-1.5 py-0.5 dark:bg-gray-700/70"
               >
                 {tech}
               </li>
