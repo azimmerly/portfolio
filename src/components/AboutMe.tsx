@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 
 import avatar from "@/assets/avatar.svg";
 import { ExternalLink } from "@/components/ExternalLink";
+import { URLS } from "@/consts";
 import { nunitoFont } from "@/fonts";
 
 export const AboutMe = () => (
@@ -30,20 +31,17 @@ export const AboutMe = () => (
         view some of my projects and{" "}
         <Link
           href="/contact"
-          className="rounded underline underline-offset-[1.5px] hover:opacity-75"
+          className="rounded underline underline-offset-[1.5px] hover:opacity-80"
         >
           get in touch
         </Link>
         .
       </p>
       <div className="flex gap-2.5">
-        <ExternalLink icon={FaGithub} href="https://github.com/azimmerly">
+        <ExternalLink icon={FaGithub} href={URLS.github}>
           GitHub
         </ExternalLink>
-        <ExternalLink
-          icon={FaLinkedin}
-          href="https://linkedin.com/in/andrewzimmerly"
-        >
+        <ExternalLink icon={FaLinkedin} href={URLS.linkedin}>
           LinkedIn
         </ExternalLink>
       </div>

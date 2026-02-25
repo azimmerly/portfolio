@@ -21,7 +21,7 @@ export const ButtonLink = ({
     className={twMerge(
       "flex w-full items-center justify-center gap-1.5 rounded-md bg-linear-to-br px-4 py-2 text-sm font-medium shadow-xs transition-[filter] lg:w-fit",
       secondary
-        ? "from-gray-100 to-gray-200 hover:brightness-97 dark:from-gray-700 dark:to-gray-800 dark:hover:brightness-110"
+        ? "from-mist-100 to-mist-200 hover:brightness-97 dark:from-mist-800 dark:to-mist-800/70 dark:hover:brightness-110"
         : "animate-shimmer from-blue-500 to-blue-700 text-white hover:brightness-120 dark:from-blue-600 dark:to-blue-800",
     )}
   >

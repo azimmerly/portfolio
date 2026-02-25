@@ -19,8 +19,8 @@ export const NavLink = ({ href, children }: NavLinkProps) => {
       className={twMerge(
         "flex items-center gap-1.5 rounded-md px-4 py-2 text-sm font-medium",
         ariaCurrent
-          ? "pointer-events-none bg-gray-200/70 dark:bg-gray-700/70"
-          : "hover:bg-gray-200/70 dark:hover:bg-gray-700/70",
+          ? "pointer-events-none bg-mist-200/70 dark:bg-mist-800"
+          : "hover:bg-mist-200/70 dark:hover:bg-mist-800",
       )}
     >
       {children}

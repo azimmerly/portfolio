@@ -36,6 +36,11 @@ export const ContactForm = () => {
     }
   };
 
+  const fieldClasses = twMerge(
+    "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-mist-200/60 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-mist-900",
+    isSubmitting && "text-mist-500 dark:text-mist-500",
+  );
+
   return (
     <form
       autoComplete="off"
@@ -54,10 +59,7 @@ export const ContactForm = () => {
         maxLength={50}
         disabled={isSubmitting}
         aria-invalid={!!errors.name}
-        className={twMerge(
-          "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/60 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800",
-          isSubmitting && "text-gray-500 dark:text-gray-400",
-        )}
+        className={fieldClasses}
       />
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="email" className="text-sm font-medium">
@@ -73,10 +75,7 @@ export const ContactForm = () => {
         maxLength={100}
         disabled={isSubmitting}
         aria-invalid={!!errors.email}
-        className={twMerge(
-          "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/60 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800",
-          isSubmitting && "text-gray-500 dark:text-gray-400",
-        )}
+        className={fieldClasses}
       />
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="message" className="text-sm font-medium">
@@ -93,10 +92,7 @@ export const ContactForm = () => {
         maxLength={1000}
         disabled={isSubmitting}
         aria-invalid={!!errors.message}
-        className={twMerge(
-          "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-gray-200/60 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-gray-800",
-          isSubmitting && "text-gray-500 dark:text-gray-400",
-        )}
+        className={fieldClasses}
       />
       <button
         type="submit"

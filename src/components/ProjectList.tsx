@@ -8,9 +8,10 @@ import gradientImage from "@/assets/gradient-image.png";
 import movieIcon from "@/assets/movie-icon.png";
 import movieImage from "@/assets/movie-image.png";
 import { ButtonLink } from "@/components/ButtonLink";
+import { URLS } from "@/consts";
 import { nunitoFont } from "@/fonts";
 
-const projects = [
+const PROJECTS = [
   {
     image: movieImage,
     icon: movieIcon,
@@ -29,7 +30,7 @@ const projects = [
       "Dark Mode",
     ],
     link: "https://movie-tracker.andrewzimmerly.com",
-    githubLink: "https://github.com/azimmerly/movie-tracker",
+    githubLink: `${URLS.github}/movie-tracker`,
   },
   {
     image: gradientImage,
@@ -41,18 +42,19 @@ const projects = [
       "React",
       "TypeScript",
       "Vite",
-      "Tailwind CSS",
+      "Vitest",
       "Zustand",
+      "Tailwind CSS",
       "Drag and Drop",
     ],
     link: "https://gradient-generator.andrewzimmerly.com",
-    githubLink: "https://github.com/azimmerly/gradient-generator",
+    githubLink: `${URLS.github}/gradient-generator`,
   },
 ] as const;
 
 export const ProjectList = () => (
   <section className="flex flex-col gap-14 lg:gap-18">
-    {projects.map((project) => (
+    {PROJECTS.map((project) => (
       <article
         key={project.title}
         className="mx-auto flex flex-col items-start gap-4 lg:flex-row lg:gap-6"
@@ -83,6 +85,7 @@ export const ProjectList = () => (
           >
             <Image
               alt=""
+              sizes="24px"
               aria-hidden="true"
               className="size-6"
               src={project.icon}
@@ -93,16 +96,16 @@ export const ProjectList = () => (
             {project.tech.map((tech) => (
               <li
                 key={tech}
-                className="rounded bg-gray-200/70 px-1.5 py-0.5 dark:bg-gray-700/70"
+                className="rounded bg-mist-200/70 px-1.75 py-0.5 dark:bg-mist-800"
               >
                 {tech}
               </li>
             ))}
           </ul>
-          <p className="my-1 flex text-justify text-[15px] text-pretty lg:text-base lg:leading-6.5">
+          <p className="my-1.5 flex text-justify text-[15px] text-pretty lg:text-base lg:leading-6.25">
             {project.description}
           </p>
-          <div className="flex gap-2">
+          <div className="flex gap-1.5">
             <ButtonLink icon={FaArrowRight} href={project.link}>
               View project
             </ButtonLink>

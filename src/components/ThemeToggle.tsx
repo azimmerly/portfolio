@@ -29,9 +29,9 @@ export const ThemeToggle = ({ className }: { className?: ClassNameValue }) => {
     >
       <span className="sr-only">Toggle theme</span>
       {resolvedTheme === "dark" ? (
-        <IoSunny aria-hidden="true" className="size-5 fill-gray-300" />
+        <IoSunny aria-hidden="true" className="size-5 fill-mist-400" />
       ) : (
-        <IoMoon aria-hidden="true" className="size-5 fill-gray-400" />
+        <IoMoon aria-hidden="true" className="size-5 fill-mist-400" />
       )}
     </button>
   );
