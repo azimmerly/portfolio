@@ -17,7 +17,7 @@ export const AboutMe = () => (
       alt="avatar"
       className="size-36 lg:size-44"
     />
-    <div className="flex max-w-lg flex-col gap-3 lg:gap-2">
+    <div className="mt-2 flex max-w-lg flex-col gap-3 lg:gap-2">
       <h1
         className={twMerge(
           "text-3xl font-bold lg:text-4xl",
@@ -37,7 +37,7 @@ export const AboutMe = () => (
         </Link>
         .
       </p>
-      <div className="flex gap-2.5">
+      <div className="flex gap-4">
         <ExternalLink icon={FaGithub} href={URLS.github}>
           GitHub
         </ExternalLink>

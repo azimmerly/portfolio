@@ -45,7 +45,7 @@ export const ContactForm = () => {
     <form
       autoComplete="off"
       onSubmit={handleSubmit(handleSendMessage)}
-      className="flex w-full max-w-md flex-col items-start lg:max-w-lg"
+      className="flex w-full max-w-md flex-col items-start px-2 lg:max-w-lg"
     >
       <div className="mb-1 flex items-center gap-2">
         <label htmlFor="name" className="text-sm font-medium">

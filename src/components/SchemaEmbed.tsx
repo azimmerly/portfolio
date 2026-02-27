@@ -1,14 +1,14 @@
 import Script from "next/script";
 import type { Person, WithContext } from "schema-dts";
 
-import { URLS } from "@/consts";
+import { SITE_URL, URLS } from "@/consts";
 
 const SCHEMA: WithContext<Person> = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Andrew Zimmerly",
   jobTitle: "Software Engineer",
-  url: "https://andrewzimmerly.com",
+  url: SITE_URL,
   sameAs: [URLS.github, URLS.linkedin],
 } as const;
 

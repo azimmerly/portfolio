@@ -85,9 +85,9 @@ export const ProjectList = () => (
           >
             <Image
               alt=""
-              sizes="24px"
+              sizes="25px"
               aria-hidden="true"
-              className="size-6"
+              className="size-6.25"
               src={project.icon}
             />
             {project.title}

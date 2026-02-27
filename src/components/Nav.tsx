@@ -7,11 +7,11 @@ export const Nav = () => (
   <nav className="flex justify-center gap-1.5 py-5 lg:justify-end">
     <ThemeToggle className="mr-4" />
     <NavLink href="/">
-      <FaCode className="size-3.5" />
+      <FaCode className="size-3.75" />
       Projects
     </NavLink>
     <NavLink href="/contact">
-      <FaRegEnvelope className="size-3.5" />
+      <FaRegEnvelope className="size-3.75" />
       Contact
     </NavLink>
   </nav>
