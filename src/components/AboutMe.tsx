@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { twMerge } from "tailwind-merge";
 
-import avatar from "@/assets/avatar.svg";
+import avatar from "@/assets/avatar.png";
 import { ExternalLink } from "@/components/ExternalLink";
 import { URLS } from "@/consts";
 import { nunitoFont } from "@/fonts";
@@ -15,9 +15,10 @@ export const AboutMe = () => (
       draggable={false}
       src={avatar}
       alt="avatar"
-      className="size-36 lg:size-44"
+      sizes="(min-width: 1024px) 166px, 136px"
+      className="h-36 w-auto lg:h-44"
     />
-    <div className="mt-2 flex max-w-lg flex-col gap-3 lg:gap-2">
+    <div className="mt-3 flex max-w-lg flex-col gap-3 lg:gap-2 lg:pl-2">
       <h1
         className={twMerge(
           "text-3xl font-bold lg:text-4xl",
