@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   metadataBase: SITE_URL,
   title: "Andrew Zimmerly",
   description: "Portfolio for Andrew Zimmerly",
+  openGraph: {
+    url: SITE_URL,
+    type: "website",
+    title: "Andrew Zimmerly",
+    siteName: "Andrew Zimmerly",
+    description: "Portfolio for Andrew Zimmerly",
+  },
 };
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (

@@ -10,6 +10,7 @@ export const sendMessage = async (data: FormData) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(validatedData),
+      signal: AbortSignal.timeout(5000),
     });
 
     return { success: res.ok };
