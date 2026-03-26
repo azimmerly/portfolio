@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaGithub } from "react-icons/fa6";
-import { twMerge } from "tailwind-merge";
 
 import gradientIcon from "@/assets/gradient-icon.png";
 import gradientImage from "@/assets/gradient-image.png";
@@ -9,7 +8,6 @@ import movieIcon from "@/assets/movie-icon.png";
 import movieImage from "@/assets/movie-image.png";
 import { ButtonLink } from "@/components/ButtonLink";
 import { URLS } from "@/consts";
-import { nunitoFont } from "@/fonts";
 
 const PROJECTS = [
   {
@@ -77,12 +75,7 @@ export const ProjectList = () => (
           />
         </Link>
         <div className="flex max-w-xl flex-col gap-2 lg:max-w-full">
-          <h2
-            className={twMerge(
-              "flex items-center gap-1 text-2xl font-bold",
-              nunitoFont.className,
-            )}
-          >
+          <h2 className="flex items-center gap-1 text-2xl font-semibold">
             <Image
               alt=""
               sizes="25px"
@@ -102,7 +95,7 @@ export const ProjectList = () => (
               </li>
             ))}
           </ul>
-          <p className="my-1.5 flex text-justify text-[15px] text-pretty lg:text-base lg:leading-6.25">
+          <p className="my-1.5 flex text-justify text-[15px] text-pretty lg:text-base">
             {project.description}
           </p>
           <div className="flex gap-1.5">
