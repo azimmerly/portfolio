@@ -1,17 +1,20 @@
 import Image from "next/image";
-import Link from "next/link";
 import { FaArrowRight, FaGithub } from "react-icons/fa6";
 
 import gradientIcon from "@/assets/gradient-icon.png";
-import gradientImage from "@/assets/gradient-image.png";
+import gradientImage1 from "@/assets/gradient-image-1.jpg";
+import gradientImage2 from "@/assets/gradient-image-2.jpg";
 import movieIcon from "@/assets/movie-icon.png";
-import movieImage from "@/assets/movie-image.png";
+import movieImage1 from "@/assets/movie-image-1.jpg";
+import movieImage2 from "@/assets/movie-image-2.jpg";
+import movieImage3 from "@/assets/movie-image-3.jpg";
 import { ButtonLink } from "@/components/ButtonLink";
+import { ImageCarousel } from "@/components/ImageCarousel";
 import { URLS } from "@/consts";
 
 const PROJECTS = [
   {
-    image: movieImage,
+    images: [movieImage1, movieImage2, movieImage3],
     icon: movieIcon,
     title: "Movie Tracker",
     description:
@@ -31,7 +34,7 @@ const PROJECTS = [
     githubLink: `${URLS.github}/movie-tracker`,
   },
   {
-    image: gradientImage,
+    images: [gradientImage1, gradientImage2],
     icon: gradientIcon,
     title: "Gradient Generator",
     description:
@@ -57,23 +60,7 @@ export const ProjectList = () => (
         key={project.title}
         className="mx-auto flex flex-col items-start gap-4 lg:flex-row lg:gap-6"
       >
-        <Link
-          href={project.link}
-          aria-label={project.title}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="max-w-md shrink-0 overflow-hidden rounded-xl shadow"
-        >
-          <Image
-            priority
-            draggable={false}
-            placeholder="blur"
-            src={project.image}
-            alt={project.title}
-            className="rounded-xl object-cover lg:h-69 lg:w-96"
-            sizes="(max-width: 1024px) 100vw, 384px"
-          />
-        </Link>
+        <ImageCarousel altLabel={project.title} images={project.images} />
         <div className="flex max-w-xl flex-col gap-2 lg:max-w-full">
           <h2 className="flex items-center gap-1 text-2xl font-semibold">
             <Image
