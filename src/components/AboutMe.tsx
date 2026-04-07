@@ -29,7 +29,7 @@ export const AboutMe = () => (
         </Link>
         .
       </p>
-      <div className="mt-1 flex gap-4">
+      <div className="flex gap-4">
         <ExternalLink icon={FaGithub} href={URLS.github}>
           GitHub
         </ExternalLink>

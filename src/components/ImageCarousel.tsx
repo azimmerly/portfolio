@@ -12,6 +12,7 @@ type ImageCarouselProps = {
 export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
+    duration: 20,
     align: "start",
     containScroll: "keepSnaps",
   });
@@ -22,7 +23,7 @@ export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
         <div className="flex">
           {images.map((img, i) => (
             <Image
-              key={i}
+              key={img.src}
               src={img}
               alt={`${altLabel} screenshot ${i + 1}`}
               draggable={false}
@@ -38,7 +39,7 @@ export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
         type="button"
         aria-label="Previous image"
         onClick={() => emblaApi?.scrollPrev()}
-        className="absolute top-1/2 left-2 -translate-y-1/2 cursor-pointer rounded-full bg-black/20 p-1.25 text-white transition-opacity hover:bg-black/25"
+        className="absolute top-1/2 left-2 -translate-y-1/2 cursor-pointer rounded-full bg-black/15 p-1.25 text-white transition-opacity hover:bg-black/20"
       >
         <FaChevronLeft className="size-3.25" />
       </button>
@@ -46,7 +47,7 @@ export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
         type="button"
         aria-label="Next image"
         onClick={() => emblaApi?.scrollNext()}
-        className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer rounded-full bg-black/20 p-1.25 text-white transition-opacity hover:bg-black/25"
+        className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer rounded-full bg-black/15 p-1.25 text-white transition-opacity hover:bg-black/20"
       >
         <FaChevronRight className="size-3.25" />
       </button>
