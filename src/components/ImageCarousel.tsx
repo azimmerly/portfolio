@@ -12,7 +12,7 @@ type ImageCarouselProps = {
 export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    duration: 20,
+    duration: 18,
     align: "start",
     containScroll: "keepSnaps",
   });
@@ -39,17 +39,17 @@ export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
         type="button"
         aria-label="Previous image"
         onClick={() => emblaApi?.scrollPrev()}
-        className="absolute top-1/2 left-2 -translate-y-1/2 cursor-pointer rounded-full bg-black/15 p-1.25 text-white transition-opacity hover:bg-black/20"
+        className="absolute top-1/2 left-1.5 -translate-y-1/2 cursor-pointer rounded-full p-1 text-black/30 transition-opacity hover:text-black/40"
       >
-        <FaChevronLeft className="size-3.25" />
+        <FaChevronLeft className="size-4.5" />
       </button>
       <button
         type="button"
         aria-label="Next image"
         onClick={() => emblaApi?.scrollNext()}
-        className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer rounded-full bg-black/15 p-1.25 text-white transition-opacity hover:bg-black/20"
+        className="absolute top-1/2 right-1.5 -translate-y-1/2 cursor-pointer rounded-full p-1 text-black/30 transition-opacity hover:text-black/40"
       >
-        <FaChevronRight className="size-3.25" />
+        <FaChevronRight className="size-4.5" />
       </button>
     </div>
   );
