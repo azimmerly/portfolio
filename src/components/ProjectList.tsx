@@ -18,7 +18,7 @@ const PROJECTS = [
     icon: movieIcon,
     title: "Movie Tracker",
     description:
-      "A full-stack web app that lets you create and share personalized lists of your favorite movies. Authentication options include email/password and social login via GitHub. Users can rate movies and designate favorites, making it easy to keep tabs on your watch history and see what friends are enjoying. Movie data is fetched from The Movie Database API and stored securely in a PostgreSQL database.",
+      "A full-stack web app for tracking, rating, and organizing movies into public or private lists. Search movies via The Movie Database API, rate them, mark favorites, and explore a stats dashboard showing your top genres and rating trends. Authentication supports email/password and GitHub social login, with data stored in PostgreSQL.",
     tech: [
       "React",
       "NextJS",
@@ -38,7 +38,7 @@ const PROJECTS = [
     icon: gradientIcon,
     title: "Gradient Generator",
     description:
-      "A simple and intuitive CSS gradient generator. Gradients can be customized using draggable color stops and set to either linear or radial style, with a live preview. The generated CSS code can then be copied to the clipboard.",
+      "A CSS gradient generator with live preview. Customize linear or radial gradients using draggable color stops, randomize for inspiration, then copy the generated CSS or share a permalink with your exact gradient configuration.",
     tech: [
       "React",
       "TypeScript",
