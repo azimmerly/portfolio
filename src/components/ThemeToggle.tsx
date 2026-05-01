@@ -1,10 +1,10 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { IoMoon, IoSunny } from "react-icons/io5";
 import { twMerge, type ClassNameValue } from "tailwind-merge";
 
 import { useIsMounted } from "@/utils/useIsMounted";
-import { IoMoon, IoSunny } from "react-icons/io5";
 
 export const ThemeToggle = ({ className }: { className?: ClassNameValue }) => {
   const isMounted = useIsMounted();
@@ -15,7 +15,7 @@ export const ThemeToggle = ({ className }: { className?: ClassNameValue }) => {
   };
 
   if (!isMounted || !resolvedTheme) {
-    return <div className="size-6" />;
+    return <div className="size-8" />;
   }
 
   return (
@@ -23,16 +23,22 @@ export const ThemeToggle = ({ className }: { className?: ClassNameValue }) => {
       type="button"
       onClick={toggleTheme}
       className={twMerge(
-        "flex size-6 cursor-pointer items-center justify-center self-center rounded-full transition-opacity hover:opacity-80",
+        "flex size-8 cursor-pointer items-center justify-center rounded-full text-mist-400 transition-colors hover:bg-mist-200/60 hover:text-mist-600 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-hidden dark:hover:bg-mist-800/70 dark:hover:text-mist-300",
         className,
       )}
     >
       <span className="sr-only">Toggle theme</span>
-      {resolvedTheme === "dark" ? (
-        <IoSunny aria-hidden="true" className="size-5 fill-mist-400" />
-      ) : (
-        <IoMoon aria-hidden="true" className="size-5 fill-mist-400" />
-      )}
+      <span
+        key={resolvedTheme}
+        aria-hidden="true"
+        className="animate-spin-in block"
+      >
+        {resolvedTheme === "dark" ? (
+          <IoSunny className="size-5" />
+        ) : (
+          <IoMoon className="size-5" />
+        )}
+      </span>
     </button>
   );
 };

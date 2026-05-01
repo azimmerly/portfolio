@@ -1,4 +1,4 @@
-import { ContactForm } from "@/components/ContactForm";
+import { ContactForm } from "./ContactForm";
 
 const Contact = () => (
   <div className="my-12 flex flex-col items-center gap-6 lg:my-20">

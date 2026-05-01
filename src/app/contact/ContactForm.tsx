@@ -37,7 +37,7 @@ export const ContactForm = () => {
   };
 
   const fieldClasses = twMerge(
-    "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-mist-200/60 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-mist-900",
+    "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-mist-200/60 px-2 py-1 outline-hidden focus:border-blue-600 dark:bg-mist-800/70",
     isSubmitting && "text-mist-500 dark:text-mist-500",
   );
 
@@ -99,14 +99,14 @@ export const ContactForm = () => {
         aria-busy={isSubmitting}
         disabled={isSubmitting}
         className={twMerge(
-          "mt-4 flex w-full items-center justify-center gap-1.5 self-center rounded-md border-none bg-linear-to-br from-blue-500 to-blue-700 px-4 py-2 text-sm font-medium text-white shadow-xs transition will-change-transform hover:brightness-120 active:scale-99 lg:w-fit",
+          "mt-4 flex w-full items-center justify-center gap-1.75 self-center rounded-md border-none bg-linear-to-br from-blue-500 to-blue-700 px-4 py-2 text-sm font-medium text-white shadow-xs transition-transform hover:brightness-120 active:translate-y-[0.5px] active:scale-[0.995] lg:w-fit",
           isSubmitting ? "pointer-events-none opacity-85" : "cursor-pointer",
         )}
       >
         {isSubmitting ? (
-          <LoadingSpinner className="size-3.5" aria-hidden="true" />
+          <LoadingSpinner className="size-3.25" aria-hidden="true" />
         ) : (
-          <FaRegPaperPlane className="size-3.5" aria-hidden="true" />
+          <FaRegPaperPlane className="size-3.25" aria-hidden="true" />
         )}
         Send message
       </button>
