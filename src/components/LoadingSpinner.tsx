@@ -1,15 +1,9 @@
-import { twMerge, type ClassNameValue } from "tailwind-merge";
-
-type LoadingSpinnerProps = {
-  className?: ClassNameValue;
-};
-
-export const LoadingSpinner = ({ className }: LoadingSpinnerProps) => (
+export const LoadingSpinner = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
-    className={twMerge("animate-spin", className)}
+    className="size-3.25 animate-spin"
   >
     <circle
       cx="12"
