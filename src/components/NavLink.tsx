@@ -2,7 +2,6 @@
 
 import Link, { type LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
-import { twMerge } from "tailwind-merge";
 
 type NavLinkProps = {
   children: React.ReactNode;
@@ -12,16 +11,15 @@ export const NavLink = ({ href, children }: NavLinkProps) => {
   const pathname = usePathname();
   const ariaCurrent = href === pathname ? "page" : undefined;
 
+  const stateClasses = ariaCurrent
+    ? "pointer-events-none border-mist-900 text-mist-900 dark:border-white dark:text-white"
+    : "border-transparent text-mist-500 hover:text-mist-900 dark:hover:text-white";
+
   return (
     <Link
       href={href}
       aria-current={ariaCurrent}
-      className={twMerge(
-        "flex items-center gap-1.5 rounded-md px-4 py-2 text-sm font-medium",
-        ariaCurrent
-          ? "pointer-events-none bg-mist-200/70 dark:bg-mist-800"
-          : "hover:bg-mist-200/70 dark:hover:bg-mist-800",
-      )}
+      className={`border-b-2 pb-0.5 text-[15px] font-medium transition-colors ${stateClasses}`}
     >
       {children}
     </Link>

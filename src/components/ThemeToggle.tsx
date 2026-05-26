@@ -2,11 +2,10 @@
 
 import { useTheme } from "next-themes";
 import { IoMoon, IoSunny } from "react-icons/io5";
-import { twMerge, type ClassNameValue } from "tailwind-merge";
 
 import { useIsMounted } from "@/utils/useIsMounted";
 
-export const ThemeToggle = ({ className }: { className?: ClassNameValue }) => {
+export const ThemeToggle = () => {
   const isMounted = useIsMounted();
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -22,10 +21,7 @@ export const ThemeToggle = ({ className }: { className?: ClassNameValue }) => {
     <button
       type="button"
       onClick={toggleTheme}
-      className={twMerge(
-        "flex size-8 cursor-pointer items-center justify-center rounded-full text-mist-400 transition-colors hover:bg-mist-200/60 hover:text-mist-600 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-hidden dark:hover:bg-mist-800/70 dark:hover:text-mist-300",
-        className,
-      )}
+      className="mr-auto flex size-8 cursor-pointer items-center justify-center rounded-full text-mist-400 transition-colors hover:bg-mist-200 hover:text-mist-600 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-hidden dark:hover:bg-mist-800 dark:hover:text-mist-300"
     >
       <span className="sr-only">Toggle theme</span>
       <span
