@@ -1,42 +1,37 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
-import avatar from "@/assets/avatar.png";
-import { ExternalLink } from "@/components/ExternalLink";
 import { URLS } from "@/consts";
 
+const socialLinks = [
+  { icon: FaGithub, href: URLS.github, label: "GitHub" },
+  { icon: FaLinkedin, href: URLS.linkedin, label: "LinkedIn" },
+] as const;
+
 export const AboutMe = () => (
-  <section className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:gap-6">
-    <Image
-      priority
-      draggable={false}
-      src={avatar}
-      alt="avatar"
-      sizes="(min-width: 1024px) 166px, 136px"
-      className="h-36 w-auto lg:h-44"
-    />
-    <div className="mt-3 flex max-w-lg flex-col gap-2 lg:pl-2">
-      <h1 className="text-3xl font-semibold lg:text-4xl">Hello!</h1>
-      <p className="text-justify text-[15px] text-pretty lg:text-base">
-        My name is Andrew and I’m a web developer from San Diego. Here you can
-        view some of my projects and{" "}
+  <section className="flex min-h-60 flex-col justify-center lg:min-h-80">
+    <p className="mb-3 text-base font-semibold tracking-widest text-mist-500 uppercase lg:mb-4">
+      Andrew Zimmerly
+    </p>
+    <h1 className="text-[clamp(2.75rem,6vw,4rem)] leading-none font-semibold tracking-tight text-mist-900 dark:text-white">
+      Web developer.
+    </h1>
+    <p className="mt-4 max-w-md text-xl text-mist-500 lg:mt-5 lg:text-2xl">
+      Full-stack. Building things for the web.
+    </p>
+    <div className="mt-5 flex items-center gap-4 lg:mt-6">
+      {socialLinks.map(({ icon: Icon, href, label }) => (
         <Link
-          href="/contact"
-          className="rounded underline underline-offset-[1.5px] hover:opacity-80"
+          key={label}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={label}
+          className="text-mist-400 transition-colors hover:text-mist-900 dark:hover:text-white"
         >
-          get in touch
+          <Icon className="size-5" />
         </Link>
-        .
-      </p>
-      <div className="flex gap-4">
-        <ExternalLink icon={FaGithub} href={URLS.github}>
-          GitHub
-        </ExternalLink>
-        <ExternalLink icon={FaLinkedin} href={URLS.linkedin}>
-          LinkedIn
-        </ExternalLink>
-      </div>
+      ))}
     </div>
   </section>
 );
