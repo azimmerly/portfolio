@@ -1,100 +1,94 @@
-import Image from "next/image";
-import { FaArrowRight, FaGithub } from "react-icons/fa6";
+import Link from "next/link";
+import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 
-import gradientIcon from "@/assets/gradient-icon.png";
 import gradientImage1 from "@/assets/gradient-image-1.jpg";
 import gradientImage2 from "@/assets/gradient-image-2.jpg";
-import movieIcon from "@/assets/movie-icon.png";
 import movieImage1 from "@/assets/movie-image-1.jpg";
 import movieImage2 from "@/assets/movie-image-2.jpg";
 import movieImage3 from "@/assets/movie-image-3.jpg";
-import { ButtonLink } from "@/components/ButtonLink";
 import { ImageCarousel } from "@/components/ImageCarousel";
 import { URLS } from "@/consts";
 
 const PROJECTS = [
   {
-    images: [movieImage1, movieImage2, movieImage3],
-    icon: movieIcon,
     title: "Movie Tracker",
     description:
-      "A full-stack web app for tracking, rating, and organizing movies into public or private lists. Search movies via The Movie Database API, rate them, mark favorites, and explore a stats dashboard showing your top genres and rating trends. Authentication supports email/password and GitHub social login, with data stored in PostgreSQL.",
+      "A full-stack app for tracking, rating, and organizing movies into public or private lists. Search via The Movie Database API, rate and log favorites, and explore a stats dashboard of your top genres and rating trends.",
     tech: [
       "React",
-      "NextJS",
+      "Next.js",
       "TypeScript",
       "Tailwind CSS",
       "Better Auth",
       "PostgreSQL",
       "Drizzle ORM",
       "Movie Database API",
-      "Dark Mode",
     ],
+    images: [movieImage1, movieImage2, movieImage3],
     link: "https://movie-tracker.andrewzimmerly.com",
     githubLink: `${URLS.github}/movie-tracker`,
   },
   {
-    images: [gradientImage1, gradientImage2],
-    icon: gradientIcon,
     title: "Gradient Generator",
     description:
-      "A CSS gradient generator with live preview. Customize linear or radial gradients using draggable color stops, randomize for inspiration, then copy the generated CSS or share a permalink with your exact gradient configuration.",
-    tech: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Vitest",
-      "Zustand",
-      "Tailwind CSS",
-      "Drag and Drop",
-    ],
+      "A CSS gradient generator with live preview. Drag color stops, switch between linear and radial, randomize for inspiration, then copy the CSS or share a permalink with your exact configuration.",
+    tech: ["React", "TypeScript", "Vite", "Vitest", "Zustand", "Tailwind CSS"],
+    images: [gradientImage1, gradientImage2],
     link: "https://gradient-generator.andrewzimmerly.com",
     githubLink: `${URLS.github}/gradient-generator`,
   },
 ] as const;
 
 export const ProjectList = () => (
-  <section className="flex flex-col gap-14 lg:gap-18">
-    {PROJECTS.map((project) => (
-      <article
-        key={project.title}
-        className="mx-auto flex flex-col items-start gap-4 lg:flex-row lg:gap-6"
-      >
-        <ImageCarousel altLabel={project.title} images={project.images} />
-        <div className="flex max-w-xl flex-col gap-2 lg:max-w-full">
-          <h2 className="flex items-center gap-1 text-2xl font-semibold">
-            <Image
-              alt=""
-              sizes="25px"
-              aria-hidden="true"
-              className="size-6.25"
-              src={project.icon}
-            />
-            {project.title}
-          </h2>
-          <ul className="flex max-w-2xl flex-wrap gap-1 text-[13px] font-medium lg:text-sm">
-            {project.tech.map((tech) => (
-              <li
-                key={tech}
-                className="rounded bg-mist-200/70 px-1.75 py-0.5 dark:bg-mist-800"
+  <section className="flex flex-col gap-6">
+    <p className="text-base font-semibold tracking-widest text-mist-400 uppercase">
+      Personal projects
+    </p>
+    <div className="grid gap-5 lg:grid-cols-2">
+      {PROJECTS.map((project) => (
+        <article
+          key={project.title}
+          className="flex flex-col overflow-hidden rounded-xl bg-white shadow dark:bg-mist-900"
+        >
+          <ImageCarousel altLabel={project.title} images={project.images} />
+          <div className="flex flex-1 flex-col p-4 lg:p-6">
+            <h2 className="text-lg font-semibold text-mist-900 dark:text-white">
+              {project.title}
+            </h2>
+            <ul className="mt-2 flex flex-wrap gap-1.25">
+              {project.tech.map((tech) => (
+                <li
+                  key={tech}
+                  className="rounded bg-mist-200 px-2 py-0.5 text-xs text-mist-600 dark:bg-mist-800 dark:text-mist-300"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm leading-relaxed text-mist-500 dark:text-mist-400">
+              {project.description}
+            </p>
+            <div className="mt-auto flex items-center gap-4 pt-4">
+              <Link
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 text-sm text-mist-500 transition-colors hover:text-mist-900 dark:text-mist-400 dark:hover:text-white"
               >
-                {tech}
-              </li>
-            ))}
-          </ul>
-          <p className="my-1.5 flex text-justify text-[15px] text-pretty lg:text-base">
-            {project.description}
-          </p>
-          <div className="flex gap-1.5">
-            <ButtonLink icon={FaArrowRight} href={project.link}>
-              View project
-            </ButtonLink>
-            <ButtonLink icon={FaGithub} href={project.githubLink} secondary>
-              GitHub
-            </ButtonLink>
+                <FaArrowUpRightFromSquare className="size-3.25" /> View project
+              </Link>
+              <Link
+                href={project.githubLink}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.25 text-sm text-mist-500 transition-colors hover:text-mist-900 dark:text-mist-400 dark:hover:text-white"
+              >
+                <FaGithub className="size-3.5" /> GitHub
+              </Link>
+            </div>
           </div>
-        </div>
-      </article>
-    ))}
+        </article>
+      ))}
+    </div>
   </section>
 );

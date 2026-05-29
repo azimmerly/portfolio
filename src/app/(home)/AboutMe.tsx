@@ -27,7 +27,7 @@ export const AboutMe = () => (
           target="_blank"
           rel="noreferrer"
           aria-label={label}
-          className="text-mist-400 transition-colors hover:text-mist-900 dark:hover:text-white"
+          className="text-mist-400 transition-colors hover:text-mist-700 dark:hover:text-mist-200"
         >
           <Icon className="size-5" />
         </Link>
