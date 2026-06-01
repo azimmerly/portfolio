@@ -41,31 +41,31 @@ const PROJECTS = [
 
 export const ProjectList = () => (
   <section className="flex flex-col gap-6">
-    <p className="text-base font-semibold tracking-widest text-mist-400 uppercase">
+    <p className="text-base font-semibold tracking-widest text-neutral-400 uppercase">
       Personal projects
     </p>
     <div className="grid gap-5 lg:grid-cols-2">
       {PROJECTS.map((project) => (
         <article
           key={project.title}
-          className="flex flex-col overflow-hidden rounded-xl bg-white shadow dark:bg-mist-900"
+          className="flex flex-col overflow-hidden rounded-xl bg-white shadow dark:bg-neutral-900"
         >
           <ImageCarousel altLabel={project.title} images={project.images} />
           <div className="flex flex-1 flex-col p-4 lg:p-6">
-            <h2 className="text-lg font-semibold text-mist-900 dark:text-white">
+            <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
               {project.title}
             </h2>
             <ul className="mt-2 flex flex-wrap gap-1.25">
               {project.tech.map((tech) => (
                 <li
                   key={tech}
-                  className="rounded bg-mist-200 px-2 py-0.5 text-xs text-mist-600 dark:bg-mist-800 dark:text-mist-300"
+                  className="rounded bg-neutral-200 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
                 >
                   {tech}
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-sm leading-relaxed text-mist-500 dark:text-mist-400">
+            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
               {project.description}
             </p>
             <div className="mt-auto flex items-center gap-4 pt-4">
@@ -73,7 +73,7 @@ export const ProjectList = () => (
                 href={project.link}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 text-sm text-mist-500 transition-colors hover:text-mist-900 dark:text-mist-400 dark:hover:text-white"
+                className="flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
               >
                 <FaArrowUpRightFromSquare className="size-3.25" /> View project
               </Link>
@@ -81,7 +81,7 @@ export const ProjectList = () => (
                 href={project.githubLink}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.25 text-sm text-mist-500 transition-colors hover:text-mist-900 dark:text-mist-400 dark:hover:text-white"
+                className="flex items-center gap-1.25 text-sm text-neutral-500 transition-colors hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
               >
                 <FaGithub className="size-3.5" /> GitHub
               </Link>

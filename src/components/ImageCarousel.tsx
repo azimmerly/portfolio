@@ -50,7 +50,7 @@ export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
         {images.map((_, index) => (
           <span
             key={index}
-            className={`size-1.5 rounded-full transition-colors ${index === selectedIndex ? "bg-mist-900/50" : "bg-mist-900/20"}`}
+            className={`size-1.5 rounded-full transition-colors ${index === selectedIndex ? "bg-neutral-900/50" : "bg-neutral-900/20"}`}
           />
         ))}
       </div>
@@ -58,7 +58,7 @@ export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
         type="button"
         aria-label="Previous image"
         onClick={() => emblaApi?.scrollPrev()}
-        className="absolute top-1/2 left-1.5 -translate-y-1/2 cursor-pointer rounded-full p-1 text-mist-900/40 transition-colors hover:text-mist-900/60"
+        className="absolute top-1/2 left-1.5 -translate-y-1/2 cursor-pointer rounded-full p-1 text-neutral-900/40 transition-colors hover:text-neutral-900/60"
       >
         <FaChevronLeft className="size-5" />
       </button>
@@ -66,7 +66,7 @@ export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
         type="button"
         aria-label="Next image"
         onClick={() => emblaApi?.scrollNext()}
-        className="absolute top-1/2 right-1.5 -translate-y-1/2 cursor-pointer rounded-full p-1 text-mist-900/40 transition-colors hover:text-mist-900/60"
+        className="absolute top-1/2 right-1.5 -translate-y-1/2 cursor-pointer rounded-full p-1 text-neutral-900/40 transition-colors hover:text-neutral-900/60"
       >
         <FaChevronRight className="size-5" />
       </button>

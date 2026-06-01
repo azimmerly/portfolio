@@ -36,7 +36,7 @@ export const ContactForm = () => {
   };
 
   const fieldClasses =
-    "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-mist-200 px-2 py-1.25 text-[15px] outline-hidden focus:border-mist-900 dark:focus:border-white dark:bg-mist-800";
+    "mb-2.5 w-full resize-none rounded-md border-2 border-transparent bg-neutral-200 px-2 py-1.25 text-[15px] outline-hidden focus:border-neutral-900 dark:focus:border-white dark:bg-neutral-800";
 
   return (
     <form
@@ -95,7 +95,7 @@ export const ContactForm = () => {
         type="submit"
         aria-busy={isSubmitting}
         disabled={isSubmitting}
-        className={`mt-3 flex w-full items-center justify-center gap-2 self-center rounded-md border-none bg-mist-900 px-4 py-2.25 text-sm font-medium text-white shadow-xs transition-colors hover:bg-mist-700 active:translate-y-[0.5px] active:scale-[0.995] dark:bg-white dark:text-mist-900 dark:hover:bg-mist-200 ${isSubmitting ? "pointer-events-none opacity-85" : "cursor-pointer"}`}
+        className={`mt-3 flex w-full items-center justify-center gap-2 self-center rounded-md border-none bg-neutral-900 px-4 py-2.25 text-sm font-medium text-white shadow-xs transition-colors hover:bg-neutral-700 active:translate-y-[0.5px] active:scale-[0.995] dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 ${isSubmitting ? "pointer-events-none opacity-85" : "cursor-pointer"}`}
       >
         {isSubmitting ? (
           <LoadingSpinner aria-hidden="true" />

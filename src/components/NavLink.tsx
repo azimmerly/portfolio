@@ -11,15 +11,15 @@ export const NavLink = ({ href, children }: NavLinkProps) => {
   const pathname = usePathname();
   const ariaCurrent = href === pathname ? "page" : undefined;
 
-  const stateClasses = ariaCurrent
-    ? "pointer-events-none border-mist-900 text-mist-900 dark:border-white dark:text-white"
-    : "border-transparent text-mist-500 hover:text-mist-900 dark:hover:text-white";
+  const activeStyles = ariaCurrent
+    ? "pointer-events-none border-neutral-800 text-neutral-800 dark:border-neutral-100 dark:text-neutral-100"
+    : "border-transparent text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-100";
 
   return (
     <Link
       href={href}
       aria-current={ariaCurrent}
-      className={`border-b-2 pb-0.5 text-[15px] font-medium transition-colors ${stateClasses}`}
+      className={`border-b-2 pb-0.5 text-sm font-medium tracking-wider uppercase transition-colors ${activeStyles}`}
     >
       {children}
     </Link>
