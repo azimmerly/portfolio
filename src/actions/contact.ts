@@ -1,12 +1,11 @@
 "use server";
 
-import { env } from "@/env";
 import { type FormData, formSchema } from "@/validation";
 
 export const sendMessage = async (data: FormData) => {
   try {
     const validatedData = formSchema.parse(data);
-    const res = await fetch(env.CONTACT_FORM_API, {
+    const res = await fetch(process.env.CONTACT_FORM_API!, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(validatedData),
