@@ -1,6 +1,5 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { FaRegPaperPlane } from "react-icons/fa6";
 import { toast } from "sonner";
@@ -8,7 +7,7 @@ import { toast } from "sonner";
 import { sendMessage } from "@/actions/contact";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { ValidationError } from "@/components/ValidationError";
-import { type FormData, formSchema } from "@/validation";
+import { EMAIL_REGEX, type FormData } from "./schema";
 
 export const ContactForm = () => {
   const {
@@ -16,9 +15,7 @@ export const ContactForm = () => {
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-  });
+  } = useForm<FormData>();
 
   const handleSendMessage = async (formData: FormData) => {
     try {
@@ -52,7 +49,10 @@ export const ContactForm = () => {
       </div>
       <input
         id="name"
-        {...register("name")}
+        {...register("name", {
+          required: "Required",
+          maxLength: { value: 50, message: "Max 50 chars" },
+        })}
         maxLength={50}
         disabled={isSubmitting}
         aria-invalid={!!errors.name}
@@ -68,7 +68,11 @@ export const ContactForm = () => {
       </div>
       <input
         id="email"
-        {...register("email")}
+        {...register("email", {
+          required: "Required",
+          maxLength: { value: 100, message: "Max 100 chars" },
+          pattern: { value: EMAIL_REGEX, message: "Invalid email" },
+        })}
         maxLength={100}
         disabled={isSubmitting}
         aria-invalid={!!errors.email}
@@ -85,8 +89,11 @@ export const ContactForm = () => {
       <textarea
         rows={5}
         id="message"
-        {...register("message")}
-        maxLength={1000}
+        {...register("message", {
+          required: "Required",
+          maxLength: { value: 2000, message: "Max 1000 chars" },
+        })}
+        maxLength={2000}
         disabled={isSubmitting}
         aria-invalid={!!errors.message}
         className={fieldClasses}
