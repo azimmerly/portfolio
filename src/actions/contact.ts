@@ -1,14 +1,14 @@
 "use server";
 
-import { EMAIL_REGEX, type FormData } from "@/app/contact/schema";
+import { isValidFormData, type FormData } from "@/app/contact/schema";
 
 export const sendMessage = async (data: FormData) => {
   try {
-    const { name, email, message } = data;
-
-    if (!name || !message || !email || !EMAIL_REGEX.test(email)) {
+    if (!isValidFormData(data)) {
       return { success: false };
     }
+
+    const { name, email, message } = data;
 
     const res = await fetch(process.env.CONTACT_FORM_API!, {
       method: "POST",
