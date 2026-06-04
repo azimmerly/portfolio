@@ -40,7 +40,7 @@ const PROJECTS = [
 ] as const;
 
 export const ProjectList = () => (
-  <section className="flex flex-col gap-6">
+  <section className="flex flex-col gap-4 lg:gap-5">
     <p className="text-base font-semibold tracking-widest text-neutral-400 uppercase">
       Personal projects
     </p>
