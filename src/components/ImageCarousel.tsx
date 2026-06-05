@@ -29,20 +29,22 @@ export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
   }, [emblaApi]);
 
   return (
-    <div className="relative aspect-3/2 w-full">
+    <div className="relative aspect-16/10 w-full">
       <div ref={emblaRef} className="h-full overflow-hidden">
         <div className="flex h-full">
           {images.map((img, index) => (
-            <Image
-              key={img.src}
-              src={img}
-              alt={`${altLabel} screenshot ${index + 1}`}
-              draggable={false}
-              placeholder="blur"
-              priority={index === 0}
-              className="min-w-0 flex-[0_0_100%] object-cover object-top"
-              sizes="(max-width: 1024px) 100vw, 552px"
-            />
+            <div key={img.src} className="relative min-w-0 flex-[0_0_100%]">
+              <Image
+                src={img}
+                alt={`${altLabel} screenshot ${index + 1}`}
+                fill
+                draggable={false}
+                placeholder="blur"
+                priority={index === 0}
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 552px"
+              />
+            </div>
           ))}
         </div>
       </div>
