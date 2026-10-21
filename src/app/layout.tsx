@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import { Footer } from "@/components/Footer";
-import { Nav } from "@/components/Nav";
 import { Providers } from "@/components/Providers";
 import { SITE_URL } from "@/consts";
 import { interFont } from "@/fonts";
@@ -25,7 +24,6 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
     <body className="flex min-h-screen flex-col items-center bg-neutral-100 text-neutral-900 antialiased dark:bg-neutral-950 dark:text-white">
       <Providers>
         <main className="flex w-full max-w-6xl flex-auto flex-col px-3.5">
-          <Nav />
           {children}
         </main>
         <Footer />
