@@ -3,7 +3,7 @@ import { ProjectList } from "./ProjectList";
 import { SchemaEmbed } from "./SchemaEmbed";
 
 const Home = () => (
-  <div className="mt-20 mb-10 flex flex-col gap-20 lg:mt-28 lg:gap-28">
+  <div className="mt-24 mb-10 flex flex-col gap-22 lg:mt-34 lg:gap-32">
     <SchemaEmbed />
     <AboutMe />
     <ProjectList />

@@ -60,17 +60,17 @@ export const ImageCarousel = ({ altLabel, images }: ImageCarouselProps) => {
         type="button"
         aria-label="Previous image"
         onClick={() => emblaApi?.scrollPrev()}
-        className="absolute top-1/2 left-1.5 -translate-y-1/2 cursor-pointer rounded-full p-1 text-neutral-900/40 transition-colors hover:text-neutral-900/60"
+        className="absolute top-1/2 left-1.5 -translate-y-1/2 cursor-pointer rounded-full p-2 text-neutral-900/40 transition-colors hover:text-neutral-900/60"
       >
-        <FaChevronLeft className="size-5" />
+        <FaChevronLeft className="size-5.5" />
       </button>
       <button
         type="button"
         aria-label="Next image"
         onClick={() => emblaApi?.scrollNext()}
-        className="absolute top-1/2 right-1.5 -translate-y-1/2 cursor-pointer rounded-full p-1 text-neutral-900/40 transition-colors hover:text-neutral-900/60"
+        className="absolute top-1/2 right-1.5 -translate-y-1/2 cursor-pointer rounded-full p-2 text-neutral-900/40 transition-colors hover:text-neutral-900/60"
       >
-        <FaChevronRight className="size-5" />
+        <FaChevronRight className="size-5.5" />
       </button>
     </div>
   );

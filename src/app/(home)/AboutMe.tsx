@@ -13,10 +13,10 @@ export const AboutMe = () => (
     <p className="mb-3 text-base font-semibold tracking-widest text-neutral-500 uppercase lg:mb-4">
       Andrew Zimmerly
     </p>
-    <h1 className="text-[clamp(2.75rem,6vw,4rem)] leading-none font-semibold tracking-tight text-neutral-900 dark:text-white">
-      Web developer.
+    <h1 className="text-[clamp(2.25rem,6vw,4rem)] leading-none font-semibold tracking-tight text-neutral-900 dark:text-white">
+      Software engineer.
     </h1>
-    <p className="mt-4 max-w-md text-xl text-neutral-500 lg:text-2xl">
+    <p className="mt-4 max-w-md text-[19px] text-neutral-500 lg:text-2xl">
       Full-stack. Building things for the web.
     </p>
     <div className="mt-5 flex items-center gap-4">
@@ -27,7 +27,7 @@ export const AboutMe = () => (
           target="_blank"
           rel="noreferrer"
           aria-label={label}
-          className="text-neutral-400 transition-colors hover:text-neutral-700 dark:hover:text-neutral-200"
+          className="-m-1 p-1 text-neutral-400 transition-colors hover:text-neutral-700 dark:hover:text-neutral-200"
         >
           <Icon className="size-5" />
         </Link>
