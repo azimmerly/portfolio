@@ -61,7 +61,7 @@ export const ProjectList = () => (
               </li>
             ))}
           </ul>
-          <p className="mt-4.5 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+          <p className="mt-4.5 text-sm leading-relaxed text-neutral-500 dark:text-neutral-300">
             {project.description}
           </p>
           <div className="mt-auto flex items-center gap-4 pt-4.5">
@@ -69,7 +69,7 @@ export const ProjectList = () => (
               href={project.link}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
+              className="flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white"
             >
               <FaArrowUpRightFromSquare className="size-3.25" /> View project
             </Link>
@@ -77,7 +77,7 @@ export const ProjectList = () => (
               href={project.githubLink}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
+              className="flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white"
             >
               <FaGithub className="size-3.5" /> GitHub
             </Link>
