@@ -8,12 +8,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: SITE_URL,
-  title: "Andrew Zimmerly",
+  title: "Andrew Zimmerly | Software Engineer",
   description: "Portfolio for Andrew Zimmerly",
+  alternates: { canonical: "/" },
   openGraph: {
     url: SITE_URL,
     type: "website",
-    title: "Andrew Zimmerly",
+    title: "Andrew Zimmerly | Software Engineer",
     siteName: "Andrew Zimmerly",
     description: "Portfolio for Andrew Zimmerly",
   },

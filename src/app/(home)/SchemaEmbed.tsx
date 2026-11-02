@@ -1,4 +1,3 @@
-import Script from "next/script";
 import type { Person, WithContext } from "schema-dts";
 
 import { SITE_URL, URLS } from "@/consts";
@@ -13,7 +12,7 @@ const SCHEMA: WithContext<Person> = {
 } as const;
 
 export const SchemaEmbed = () => (
-  <Script
+  <script
     id="jsonld-schema"
     type="application/ld+json"
     dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}
